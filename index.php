@@ -1,7 +1,7 @@
 <?php include("head.php");?>
 <body>
     <div class="container">
-        <form action = "index.php">
+        <form method="post" action = "submit.php">
             <label>Nombre :</label>
             <input type="text" name="cerveza" value="">
             <label>Pais :</label>
