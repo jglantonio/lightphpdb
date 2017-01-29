@@ -1,10 +1,9 @@
 <?php
 if(isset($_POST) && ($_POST["cerveza"] != "" && $_POST["pais"] != "")){
     include("Class/Class_bdmysqli.php");
-    $mysqli = new bdmysqli();
-    $mysqli->insert();
-    exit();
-    print_r($_POST);
+    $mysqli = new Class_bdmysqli();
+    $mysqli->insert($_POST);
+    header("Location: index.php");
 }else{
     header("Location: index.php");
 }
