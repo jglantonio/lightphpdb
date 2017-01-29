@@ -1,9 +1,6 @@
-<html>
-<head>
-    <title>Titulo</title>
-</head>
+<?php include("incl/head.php");?>
 <body>
-<form action = "submit.php">
+<form action = "index.php">
     <input type="text">
     <input type="submit">
 </form>
