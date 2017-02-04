@@ -1,15 +1,15 @@
 <?php
 include("head.php");
-include("Class/Class_bdmysqli.php");
-$mysqli = new Class_bdmysqli();
+include("Class/Class_bdpdo.php");
+$pdo = new Class_bdpdo();
 if(isset($_POST) && !empty($_POST) || isset($_GET["id"]) && !empty($_GET)) {
 
     if (isset($_GET["id"])) {
         if ($_GET["id"]){
-            $mysqli->delete($_GET);
+            $pdo->delete($_GET);
         }
     } else {
-        $mysqli->insert($_POST);
+        $pdo->insert($_POST);
     }
 }
 ?>
@@ -24,7 +24,7 @@ if(isset($_POST) && !empty($_POST) || isset($_GET["id"]) && !empty($_GET)) {
     </form>
     <?php
     if(isset($_GET["action"])){
-        echo $mysqli->getTime()." Segundos";
+        echo $pdo->getTime()." Segundos";
     }
     ?>
     <table>
@@ -33,19 +33,19 @@ if(isset($_POST) && !empty($_POST) || isset($_GET["id"]) && !empty($_GET)) {
             <th>Pais</th>
         </tr>
         <?php
-        $beers = $mysqli->select();
+        $beers = $pdo->select();
         foreach($beers as $beer){
             echo"<tr>
-                        <td >$beer[1]</td>
-                        <td>$beer[2]</td>
+                        <td>".$beer['name']."</td>
+                        <td>".$beer['country']."</td>
                         <td>
-                        <a href='bdone.php?id=".$beer[0]."'>Delete</a>
+                        <a href='bdone.php?id=".$beer['id']."'>Delete</a>
                      </td>";
             echo"</tr>";
         }
         ?>
     </table>
-    <div> <?php echo $mysqli->getTime(); ?> Segundos</div>
+    <div> <?php echo $pdo->getTime(); ?> Segundos</div>
 </div>
 </body>
 </html>

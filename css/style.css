@@ -21,6 +21,9 @@ body{
     color:white;
     text-decoration: none;
 }
+a{
+    text-decoration: none;
+}
 form{
     display: block;
     border:1px solid black;
@@ -29,8 +32,12 @@ form{
 table {
     border: 1px solid black;
 }
-table td {
+table tr{
     border: 1px solid black;
+}
+table td {
+    padding: 5px;
+    border: 0px solid black;
 }
 
 .intro{
