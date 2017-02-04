@@ -12,28 +12,35 @@ class Class_bdmysqli
     private $time_start;
     private $time_end;
     public function getTime(){
-        return round(($this->time_end - $this->time_start)/1000000000,4);
+        return round(($this->time_end - $this->time_start),5);
     }
     public function __construct(){
         $this->conn = new mysqli("127.0.0.1","root","1234","charlaphp");
     }
     public function insert($values){
-        $this->time_start  = system('date +%N');
+        $this->time_start = microtime(true);
         $sql = " INSERT INTO `beers` (`id`, `name`, `country`) ".
                " VALUES (NULL, '".$values["cerveza"]."', '".$values["pais"]."');";
         $connection = $this->conn;
         $connection->set_charset("UTF-8");
         $query = $connection->query($sql);
-        $query->close();
-        $this->time_end = system('date +%N');
+        $this->time_end = microtime(true);
     }
     public function select(){
-        $this->time_start  = system('date +%N');
+        $this->time_start  = microtime(true);
         $sql = " SELECT * FROM beers";
         $connection = $this->conn;
         $query = $connection->query($sql);
-        $this->time_end = system('date +%N');
+        $this->time_end = microtime(true);
         return $query->fetch_all();
     }
+    public function delete($value){
+        $connection = $this->conn;
+        $this->time_start  = microtime(true);
+        $sql = " DELETE FROM beers WHERE id=".$value['id'];
+        $query = $connection->query($sql);
+        $this->time_end = microtime(true);
+    }
+
 
 }

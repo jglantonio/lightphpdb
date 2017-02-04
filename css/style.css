@@ -1,7 +1,25 @@
+body{
+    background-color: #ffc857;
+}
 .container{
+    background-color: darkgray;
     margin: 0px auto;
     width: 40%;
-    top:10px;
+    margin-top:70px;
+    padding:50px;
+}
+.list{
+    list-style-type: none;
+}
+.list li {
+    margin:10px;
+    padding:10px;
+    background: #e9724c;
+    width: 70px;
+}
+.list li a{
+    color:white;
+    text-decoration: none;
 }
 form{
     display: block;
@@ -13,4 +31,11 @@ table {
 }
 table td {
     border: 1px solid black;
+}
+
+.intro{
+    border: 1px solid black;
+    margin-top: 100px;
+    padding:20px;
+
 }
