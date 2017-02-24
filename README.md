@@ -1,7 +1,7 @@
 ### Charla de php
 
 Charla realizada en PHP Vigo , sobre formas e conectarse a base de datos
-comentando las clases obsoletas y clases que son más útiles en su uso.
+comentando las clases obsoletas y clases más útiles.
 
 ### Información
 
