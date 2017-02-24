@@ -20,15 +20,6 @@ class Class_bdpdo{
     public function __construct(){
         $this->conn = new PDO($this->dsn,$this->user,$this->pass);
     }
-    public function insert($values){
-        $this->time_start = microtime(true);
-        $sql = " INSERT INTO `beers` (`id`, `name`, `country`) ".
-            " VALUES (NULL, '".$values["cerveza"]."', '".$values["pais"]."');";
-        $connection = $this->conn;
-        $connection->set_charset("UTF-8");
-        $query = $connection->query($sql);
-        $this->time_end = microtime(true);
-    }
     public function select(){
         $this->time_start  = microtime(true);
         $sql = " SELECT * FROM beers";
@@ -36,13 +27,4 @@ class Class_bdpdo{
         $this->time_end = microtime(true);
         return $consulta->fetchAll();
     }
-    public function delete($value){
-        $connection = $this->conn;
-        $this->time_start  = microtime(true);
-        $sql = " DELETE FROM beers WHERE id=".$value['id'];
-        $query = $connection->query($sql);
-        $this->time_end = microtime(true);
-    }
-
-
 }
