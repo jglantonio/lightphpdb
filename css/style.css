@@ -31,6 +31,9 @@ body{
     position:relative;
     top:100px;
 }
+.link{
+    margin:5px;
+}
 footer{
     position:absolute;
     width: 100%;

@@ -26,6 +26,19 @@ class Class_bdpdo{
         $this->time_end = microtime(true);
         return $consulta->fetchAll();
     }
+/*
+    public function insert($values){
+        $this->time_start = microtime(true);
+        $this->flushCache();
+        $sql = " INSERT INTO `beers` (`id`, `name`, `country`) ".
+            " VALUES (NULL, '".$values["cerveza"]."', '".$values["pais"]."');";
+        $connection = $this->conn;
+        $connection->set_charset("UTF-8");
+        $query = $connection->query($sql);
+        $this->time_end = microtime(true);
+        echo "Insert in : ".$this->getTime();
+    }
+*/
     public function flushCache(){
         $sql = "RESET QUERY CACHE;";
         $this->conn->query($sql);

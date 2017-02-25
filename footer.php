@@ -1,9 +1,10 @@
 <footer class="panel-footer footer ">
-    <a href="about.php" class="btn">
+    <a href="about.php" class="link">
         About
     </a>
+    |
     <a
-            class="btn"
+            class="link"
             href="https://github.com/jglantonio/lightphpdb/tree/ampliacion-pdo-mysqli-formas-correctas"
     >
         GitHub
