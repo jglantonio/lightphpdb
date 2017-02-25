@@ -58,3 +58,4 @@ if(isset($_POST) && !empty($_POST) || isset($_GET["id"]) && !empty($_GET)) {
 <?php
     include("footer.php");
 ?>
+</html>
