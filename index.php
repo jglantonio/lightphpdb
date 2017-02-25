@@ -2,9 +2,16 @@
 include("head.php");
 ?>
 <body>
-<div class="container intro ">
-    <ul class="list">
-        <li><a href="bdone.php"> Mysqli</a></li>
-        <li><a href="bdtwo.php"> PDO</a></li>
-    </ul>
+<div class="container">
+    <div class="panel col-lg-offset-3">
+        <ul>
+            <li>
+                <a href="bdone.php" class="btn"> Mysqli</a>
+            </li>
+            <li>
+                <a href="bdtwo.php" class="btn"> PDO</a>
+            </li>
+        </ul>
+   </div>
+</div>
 </body>

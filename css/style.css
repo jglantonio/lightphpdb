@@ -1,48 +1,26 @@
 body{
-    background-color: #ffc857;
+    background-color: #c0c0c0;
 }
-.container{
-    background-color: darkgray;
-    margin: 0px auto;
-    width: 40%;
-    margin-top:70px;
-    padding:50px;
+.panel{
+    background-color: #336699;
+    border: 1px solid black;
+    position:relative;
+    width: 50%;
+    top:300px;
 }
-.list{
-    list-style-type: none;
+.panel ul li{
+    list-style: none;
 }
-.list li {
-    margin:10px;
+.btn{
+    background-color: #ffffff;
+    border: 1px solid black;
+    color: #000000;
+    margin: 10px;
+}
+.beers-table{
+    background-color: #ffffff;
     padding:10px;
-    background: #e9724c;
-    width: 70px;
-}
-.list li a{
-    color:white;
-    text-decoration: none;
-}
-a{
-    text-decoration: none;
-}
-form{
-    display: block;
-    border:1px solid black;
-    padding:5px;
-}
-table {
     border: 1px solid black;
-}
-table tr{
-    border: 1px solid black;
-}
-table td {
-    padding: 5px;
-    border: 0px solid black;
-}
-
-.intro{
-    border: 1px solid black;
-    margin-top: 100px;
-    padding:20px;
-
+    position:relative;
+    top:250px;
 }

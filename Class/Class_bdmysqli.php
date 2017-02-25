@@ -17,18 +17,26 @@ class Class_bdmysqli
     public function __construct(){
         $this->conn = new mysqli("127.0.0.1","root","1234","charlaphp");
     }
+    public function flushCache(){
+        $sql = "RESET QUERY CACHE;";
+        $connection = $this->conn;
+        $query = $connection->query($sql);
+    }
     public function insert($values){
         $this->time_start = microtime(true);
+        $this->flushCache();
         $sql = " INSERT INTO `beers` (`id`, `name`, `country`) ".
                " VALUES (NULL, '".$values["cerveza"]."', '".$values["pais"]."');";
         $connection = $this->conn;
         $connection->set_charset("UTF-8");
         $query = $connection->query($sql);
         $this->time_end = microtime(true);
+        echo "Insert in : ".$this->getTime();
     }
     public function select(){
         $this->time_start  = microtime(true);
-        $sql = " SELECT * FROM beers";
+        $this->flushCache();
+        $sql = "SELECT * FROM beers;";
         $connection = $this->conn;
         $query = $connection->query($sql);
         $this->time_end = microtime(true);
