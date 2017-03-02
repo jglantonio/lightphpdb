@@ -11,6 +11,9 @@
             <li>
                 <a href="bdtwo.php" class="btn"> PDO</a>
             </li>
+            <li>
+                <a href="avgquerys.php" class="btn"> Medias </a>
+            </li>
         </ul>
    </div>
 </div>
